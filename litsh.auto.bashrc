@@ -1,0 +1,1 @@
+alias progress='progress -M'
