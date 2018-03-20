@@ -37,5 +37,5 @@ fi
 
 if [ $(cat ~/.bashrc | grep 'litsh' | wc -l) -eq 0 ] ; then
     echo "source $BashAuto" >> ~/.bashrc
-    echo "source $BashOwn"/litsh.bashrc' >> ~/.bashrc
+    echo "source $BashOwn" >> ~/.bashrc
 fi
