@@ -1,3 +1,6 @@
 alias l='ls -lsh'
 alias sl='ls -lsh'
 alias vi='vim'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias grep='grep --color=auto'
