@@ -21,7 +21,13 @@ cd $WorkDir
 cat /dev/null > $BashAuto
 
 #软件源直接安装
-$PaMa update && $PaMa install -y htop iotop vim unzip tree python-pip
+if [ "$PaMa" = "apt-get" ] ; then 
+    $PaMa update
+else
+    $PaMa makecache
+fi
+$PaMa install -y python-pip pkg-config
+$PaMa install -y htop iotop vim unzip tree
 
 #pip 安装
 pip install speedometer
