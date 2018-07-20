@@ -51,7 +51,7 @@ if [ ! "$Progress" ]; then
     unzip -o $SoftDir'/progress.zip' -d $TmpDir
     cd $TmpDir'/progress' && make && make install
 fi
-echo "alias progress='progress -M'" >> $BashAuto
+echo "alias progress='/usr/local/bin/progress'" >> $BashAuto
 
 #Bat
 Bat=$(type -p bat)
@@ -59,6 +59,7 @@ if [ ! "$Bat" ]; then
     unzip -o $SoftDir'/bat.zip' -d $TmpDir
     cp $TmpDir'/bat' /usr/local/bin/
 fi
+echo "alias bat='/usr/local/bin/bat'" >> $BashAuto
 
 #导入自定义 bash 命令
 BashrcFile=`ls /etc/* | grep bashrc | head`
