@@ -1,4 +1,5 @@
 alias l='ls -lsh'
+alias ls='ls --color=auto'
 alias sl='ls -lsh'
 alias vi='vim'
 alias egrep='egrep --color=auto'

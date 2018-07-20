@@ -6,6 +6,13 @@ SoftDir=$WorkDir'/software'
 TmpDir=$WorkDir'/tmp'
 BashAuto=$WorkDir'/litsh.auto.bashrc'
 BashOwn=$WorkDir'/litsh.bashrc'
+
+#确认用户身份
+if [ ! `whoami` == 'root' ] ; then
+    echo 'Operation not permitted, run this script as root'
+    exit
+fi
+
 mkdir -p $TmpDir
 
 #确认 Package Manager
@@ -54,7 +61,9 @@ if [ ! "$Bat" ]; then
 fi
 
 #导入自定义 bash 命令
-if [ $(cat ~/.bashrc | grep 'litsh' | wc -l) -eq 0 ] ; then
-    echo "source $BashAuto" >> ~/.bashrc
-    echo "source $BashOwn" >> ~/.bashrc
+BashrcFile=`ls /etc/* | grep bashrc | head`
+if [ $(cat $BashrcFile | grep 'litsh' | wc -l) -eq 0 ] ; then
+    echo "source $BashAuto" >> $BashrcFile
+    echo "source $BashOwn" >> $BashrcFile
 fi
+
