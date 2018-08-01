@@ -16,7 +16,7 @@ fi
 mkdir -p $TmpDir
 
 #确认 Package Manager
-PaMa=$(type -p 'apt-get' || type -p 'yum')
+PaMa=$(type -t 'apt-get' || type -t 'yum')
 if [ ! "$PaMa" ]; then
     echo "Your Package Manager ?"
     read PaMa
@@ -37,14 +37,14 @@ $PaMa install -y python-pip pkg-config
 $PaMa install -y htop iotop vim unzip tree
 
 #pip 安装
-Speedometer=$(type -p speedometer)
+Speedometer=$(type -t speedometer)
 if [ ! "$Bat" ]; then
     pip install speedometer
 fi
 echo "alias sm='speedometer'" >> $BashAuto
 
 #progress
-Progress=$(type -p progress)
+Progress=$(type -t progress)
 if [ ! "$Progress" ]; then
     $PaMa install -y libncurses5-dev 
     $PaMa install -y ncurses-devel
@@ -54,7 +54,7 @@ fi
 echo "alias progress='/usr/local/bin/progress'" >> $BashAuto
 
 #Bat
-Bat=$(type -p bat)
+Bat=$(type -t bat)
 if [ ! "$Bat" ]; then
     unzip -o $SoftDir'/bat.zip' -d $TmpDir
     cp $TmpDir'/bat' /usr/local/bin/
