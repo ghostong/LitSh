@@ -62,7 +62,7 @@ fi
 echo "alias bat='/usr/local/bin/bat'" >> $BashAuto
 
 #导入自定义 bash 命令
-BashrcFile=`ls /etc/* | grep bashrc | head`
+BashrcFile=`ls /etc/* | grep bashrc | head -1`
 if [ $(cat $BashrcFile | grep 'litsh' | wc -l) -eq 0 ] ; then
     echo "source $BashAuto" >> $BashrcFile
     echo "source $BashOwn" >> $BashrcFile
