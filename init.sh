@@ -16,7 +16,7 @@ fi
 mkdir -p $TmpDir
 
 #确认 Package Manager
-PaMa=$(type -t 'apt-get' || type -t 'yum')
+PaMa=$(type -p 'apt-get' || type -p 'yum')
 if [ ! "$PaMa" ]; then
     echo "Your Package Manager ?"
     read PaMa
