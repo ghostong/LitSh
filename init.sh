@@ -34,7 +34,7 @@ else
     $PaMa makecache
 fi
 $PaMa install -y python-pip pkg-config
-$PaMa install -y htop iotop vim unzip tree screen
+$PaMa install -y htop iotop vim unzip tree screen nethogs
 
 #pip 安装
 Speedometer=$(type -t speedometer)
