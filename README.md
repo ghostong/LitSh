@@ -1,7 +1,7 @@
 ### 安装方法
 ```
 cd /opt && \
-git clone https://code.aliyun.com/litosrc/litsh.git && \
+git clone https://github.com/ghostong/LitSh.git && \
 chmod +x ./litsh/init.sh && \
 ./litsh/init.sh
 ```
