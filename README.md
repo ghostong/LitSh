@@ -2,8 +2,8 @@
 ```
 cd /opt && \
 git clone https://github.com/ghostong/LitSh.git && \
-chmod +x ./litsh/init.sh && \
-./litsh/init.sh
+chmod +x ./LitSh/init.sh && \
+./LitSh/init.sh
 ```
 
 ### litsh包含项
